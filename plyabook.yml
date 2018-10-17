@@ -1,0 +1,12 @@
+---
+  - hosts: all
+    become : yes
+    tasks:
+      - name : installing apache2 on MSR-test-Instance-1
+        apt:
+          name : apache2
+          state : present
+      - name : restarting apache2
+        service : 
+          name : apache2
+          state : restarted
